@@ -10,6 +10,8 @@ const fs = require("fs");
 
 const app = express();
 
+// app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -28,7 +30,8 @@ app.use((req, res, next) => {
 app.use(
   cors({
     credentials: true,
-    origin: "https://booksionary-client.vercel.app",
+    methods:[],
+    origin: ["https://booksionary-client.vercel.app"],
   })
 );
 
@@ -62,19 +65,19 @@ app.post("/upload-by-link", async (req, res) => {
 });
 
 // upload photo from device
-const photosMiddleware = multer({ dest: "uploads/" });
-app.post("/upload", photosMiddleware.array("photos", 100), (req, res) => {
-  const uploadedFiles = [];
-  for (let i = 0; i < req.files.length; i++) {
-    const { path, originalname } = req.files[i];
-    const parts = originalname.split(".");
-    const ext = parts[parts.length - 1];
-    const newPath = path + "." + ext;
-    fs.renameSync(path, newPath);
-    uploadedFiles.push(newPath.replace('uploads/',' '));
-  }
-  res.json(uploadedFiles);
-});
+// const photosMiddleware = multer({ dest: "uploads/" });
+// app.post("/upload", photosMiddleware.array("photos", 100), (req, res) => {
+//   const uploadedFiles = [];
+//   for (let i = 0; i < req.files.length; i++) {
+//     const { path, originalname } = req.files[i];
+//     const parts = originalname.split(".");
+//     const ext = parts[parts.length - 1];
+//     const newPath = path + "." + ext;
+//     fs.renameSync(path, newPath);
+//     uploadedFiles.push(newPath.replace('uploads/',' '));
+//   }
+//   res.json(uploadedFiles);
+// });
 
 // INDEX Route
 app.post("/book", async (req, res) => {
@@ -114,7 +117,6 @@ app.delete('/books/:id',async(req,res)=>{
   await Book.findByIdAndDelete(id);
   res.json('deleted');
 })
-
 
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
