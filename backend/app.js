@@ -14,26 +14,22 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://booksionary-client.vercel.app",
+  })
+);
 
-
-// Function to determine allowed origins
-const allowedOrigins = [
-  "https://booksionary-client.vercel.app",
-  "http://localhost:5173", 
-];
-
-const corsOptions = {
-  credentials: true,
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-
-app.use(cors(corsOptions));
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 
 const dbUrl = process.env.MONGO_URL;
@@ -118,6 +114,12 @@ app.delete('/books/:id',async(req,res)=>{
   await Book.findByIdAndDelete(id);
   res.json('deleted');
 })
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).send("Internal Server Error");
+});
 
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
