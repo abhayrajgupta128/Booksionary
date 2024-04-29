@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./newbook.css";
 import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
-import PhotosUploader from "../../components/photosUploader/PhotosUploader";
+import { PhotosUploader } from "../../components";
 
 const NewBook = () => {
   const {id} = useParams();

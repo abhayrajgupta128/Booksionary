@@ -1,9 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import BookDetails from "./pages/bookDetails/BookDetails";
+import {BookDetails, IndexPage, NewBook} from './pages';
 import Layout from "./Layout";
-import IndexPage from "./pages/indexpage/IndexPage";
-import NewBook from "./pages/newBook/NewBook";
 import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:8080";

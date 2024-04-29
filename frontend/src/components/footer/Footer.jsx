@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/logo.svg';
+import { images } from '../../constants';
 import './footer.css';
 
 const Footer = () => {
@@ -16,7 +16,7 @@ const Footer = () => {
 
             <div className="books__footer-links">
             <div className="books__footer-links_logo">
-                <img src={logo} alt="books_logo" />
+                <img src={images.logo} alt="books_logo" />
                 <p>Crechterwoord K12 182 DK Alknjkcb, <br /> All Rights Reserved</p>
             </div>
             <div className="books__footer-links_div">

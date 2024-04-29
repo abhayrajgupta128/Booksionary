@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./navbar.css";
-import logo from "../../assets/logo.svg";
+import { images } from "../../constants";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="books__navbar-links">
         <div className="books__navbar-links_logo">
           <Link to={"/"}>
-            <img src={logo} alt="logo" />
+            <img src={images.logo} alt="logo" />
           </Link>
         </div>
         <div className="books__navbar-links_container">

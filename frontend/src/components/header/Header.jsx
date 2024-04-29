@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.css";
-import book from '../../assets/book.jpg'
+import { images } from "../../constants";
 
 const Header = () => {
   return (
@@ -21,7 +21,7 @@ const Header = () => {
       </div>
 
       <div className="books__header-image">
-        <img src={book} alt="book" />
+        <img src={images.book} alt="book" />
       </div>
     </div>
   );
