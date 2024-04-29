@@ -38,7 +38,7 @@ async function main() {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.json("Hello");
 });
 
 // upload photo by link
