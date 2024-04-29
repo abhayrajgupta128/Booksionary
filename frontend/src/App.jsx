@@ -4,7 +4,7 @@ import {BookDetails, IndexPage, NewBook} from './pages';
 import Layout from "./Layout";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://booksionary-api.vercel.app";
 axios.defaults.withCredentials = true;
 
 function App() {
