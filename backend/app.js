@@ -8,13 +8,12 @@ const imageDownloader = require("image-downloader");
 const multer = require("multer");
 const fs = require("fs");
 
+const app = express();
+
 // app.use(express.urlencoded({ extended: true }));
-app.use(express.static())
+
 app.use(express.json());
 app.use(cookieParser());
-
-
-
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
