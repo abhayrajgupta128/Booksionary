@@ -115,11 +115,6 @@ app.delete('/books/:id',async(req,res)=>{
   res.json('deleted');
 })
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).send("Internal Server Error");
-});
 
 app.listen(8080, () => {
   console.log("server is listening to port 8080");
