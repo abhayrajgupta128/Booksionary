@@ -17,13 +17,12 @@
     font-weight: 800;
 }
 
-.books__card-container{
+/* .books__card-container{
     display: flex;
-    flex-wrap: wrap;
-    grid-gap: 6rem;
+    flex-wrap: wrap; 
+    grid-gap: 6rem; 
     justify-content: space-between;
-
-}
+} */
 
 .books__card-button {
     display: flex;

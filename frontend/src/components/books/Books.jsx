@@ -22,9 +22,9 @@ const Books = () => {
         <div className="books__card-heading">
           <h1 className="gradient__text">Our Featured Books</h1>
         </div>
-        <div className='books__card-container'>          
+        <div className='books__card-container grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>          
           {booksData.length>0 && booksData.map((book,index) => (
-            <div key={index}> 
+            <div key={index} className='flex justify-center'> 
               <Link to={'/book/'+book._id}>
                 <Cards
                 title={book.title}

@@ -31,11 +31,11 @@ const BookDetails = () => {
   }
 
   return (
-    <div className="bookdetails mx-20 mb-10 px-8 py-8 text-white rounded-3xl">
+    <div className="bookdetails mx-10 mb-10 px-8 py-8 text-white rounded-3xl">
       <h1 className="text-4xl text-center">{book.title}</h1>
 
-      <div className="mx-8 grid grid-cols-2">
-        <div className="mt-5">
+      <div className="mx-8 grid grid cols-1 lg:grid-cols-2">
+        <div className="mt-5 flex justify-center lg:justify-start">
           {book.photos?.[0] && (
             <div>
               <img
@@ -59,7 +59,7 @@ const BookDetails = () => {
             <h2 className="font-semibold text-3xl">Description</h2>
             <p className="mt-1">{book.description}</p>
           </div>
-          <div className="books__navbar-sign mt-14 flex justify-around">
+          <div className="books__navbar-sign mt-14 flex justify-between">
             <Link to={`/new/${id}`}>
               <button>Edit</button>
             </Link>
