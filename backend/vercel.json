@@ -1,12 +1,10 @@
 {
-    "version":2,
+    "version": 2,
+    "name": "booksionary",
     "builds": [
-        {"src": "*.js", "use":"@vercel/node"}
+       { "src": "app.js", "use": "@vercel/node" }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
+       { "src": "/(.*)", "dest": "/app.js" }
     ]
-}
+ }
