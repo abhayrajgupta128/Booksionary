@@ -8,12 +8,15 @@ const imageDownloader = require("image-downloader");
 const multer = require("multer");
 const fs = require("fs");
 
-const app = express();
+const app = express('dist');
 
 // app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static())
 app.use(express.json());
 app.use(cookieParser());
+
+
+
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
@@ -30,8 +33,7 @@ app.use((req, res, next) => {
 app.use(
   cors({
     credentials: true,
-    methods:[],
-    origin: ["https://booksionary-client.vercel.app"],
+    origin: "https://booksionary-client.vercel.app",
   })
 );
 
