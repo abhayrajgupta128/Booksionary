@@ -10,29 +10,31 @@ const fs = require("fs");
 
 const app = express();
 
-// app.use(express.urlencoded({ extended: true }));
-
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-// Add Access Control Allow Origin headers
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://booksionary-client.vercel.app");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://booksionary-client.vercel.app",
-  })
-);
+// Function to determine allowed origins
+const allowedOrigins = [
+  "https://booksionary-client.vercel.app",
+  "http://localhost:5173", 
+];
+
+const corsOptions = {
+  credentials: true,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
 
 const dbUrl = process.env.MONGO_URL;
 
@@ -64,19 +66,19 @@ app.post("/upload-by-link", async (req, res) => {
 });
 
 // upload photo from device
-// const photosMiddleware = multer({ dest: "uploads/" });
-// app.post("/upload", photosMiddleware.array("photos", 100), (req, res) => {
-//   const uploadedFiles = [];
-//   for (let i = 0; i < req.files.length; i++) {
-//     const { path, originalname } = req.files[i];
-//     const parts = originalname.split(".");
-//     const ext = parts[parts.length - 1];
-//     const newPath = path + "." + ext;
-//     fs.renameSync(path, newPath);
-//     uploadedFiles.push(newPath.replace('uploads/',' '));
-//   }
-//   res.json(uploadedFiles);
-// });
+const photosMiddleware = multer({ dest: "uploads/" });
+app.post("/upload", photosMiddleware.array("photos", 100), (req, res) => {
+  const uploadedFiles = [];
+  for (let i = 0; i < req.files.length; i++) {
+    const { path, originalname } = req.files[i];
+    const parts = originalname.split(".");
+    const ext = parts[parts.length - 1];
+    const newPath = path + "." + ext;
+    fs.renameSync(path, newPath);
+    uploadedFiles.push(newPath.replace('uploads/',' '));
+  }
+  res.json(uploadedFiles);
+});
 
 // INDEX Route
 app.post("/book", async (req, res) => {
