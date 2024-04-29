@@ -8,8 +8,6 @@ const imageDownloader = require("image-downloader");
 const multer = require("multer");
 const fs = require("fs");
 
-const app = express('dist');
-
 // app.use(express.urlencoded({ extended: true }));
 app.use(express.static())
 app.use(express.json());
