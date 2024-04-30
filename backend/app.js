@@ -17,6 +17,14 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 // Enable CORS for all routes
 app.use(cors());
 
+// Set the Access-Control-Allow-Origin header to allow requests from a specific origin
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://booksionary-client.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 const dbUrl = process.env.MONGO_URL;
 
 main()
