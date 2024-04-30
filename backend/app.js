@@ -15,17 +15,18 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-const corsOptions = {
-  origin: 'https://booksionary-client.vercel.app'
-};
+// const corsOptions = {
+//   origin: 'https://booksionary-client.vercel.app'
+// };
 
-app.use(cors(corsOptions));
-// app.use(
-//   cors({
-//     methods: '*',
-//     origin: 'https://booksionary-client.vercel.app',
-//   })
-// );
+// app.use(cors(corsOptions));
+function setCorsHeaders(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+}
+app.use(setCorsHeaders);
 
 const dbUrl = process.env.MONGO_URL;
 
