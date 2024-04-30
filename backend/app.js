@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+const cors = require("cors"); 
 const mongoose = require("mongoose");
 const Book = require("./models/book.js");
 require("dotenv").config();
@@ -14,19 +14,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
-
-// const corsOptions = {
-//   origin: 'https://booksionary-client.vercel.app'
-// };
-
-// app.use(cors(corsOptions));
-function setCorsHeaders(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-}
-app.use(setCorsHeaders);
+// Enable CORS for all routes
+app.use(cors());
 
 const dbUrl = process.env.MONGO_URL;
 
