@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const mongoose = require("mongoose");
 const Book = require("./models/book.js");
 require("dotenv").config();
@@ -26,13 +26,17 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 //   );
 //   next();
 // });
+const corsOptions = {
+  origin: 'https://booksionary-client.vercel.app'
+};
 
-app.use(
-  cors({
-    methods: '*',
-    origin: 'https://booksionary-client.vercel.app',
-  })
-);
+app.use(cors(corsOptions));
+// app.use(
+//   cors({
+//     methods: '*',
+//     origin: 'https://booksionary-client.vercel.app',
+//   })
+// );
 
 const dbUrl = process.env.MONGO_URL;
 

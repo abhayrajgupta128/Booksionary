@@ -5,7 +5,7 @@ import Layout from "./Layout";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://booksionary-api.vercel.app";
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (
