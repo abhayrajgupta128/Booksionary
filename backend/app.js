@@ -1,5 +1,5 @@
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const Book = require("./models/book.js");
 require("dotenv").config();
@@ -10,22 +10,11 @@ const fs = require("fs");
 
 const app = express();
 
-// app.use(express.urlencoded({ extended: true }));
-
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-// Add Access Control Allow Origin headers
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "https://booksionary-client.vercel.app");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
 const corsOptions = {
   origin: 'https://booksionary-client.vercel.app'
 };
