@@ -4,7 +4,6 @@
     align-items: center;
 
     padding: 2rem 6rem;
-    /* margin-bottom: -10rem;  */
 }
 
 .books__navbar-links {
@@ -21,6 +20,7 @@
 .books__navbar-links_logo img {
     width: 40px;
     height: 40px;
+    object-fit: cover;
 }
 
 .books__navbar-links_container {
@@ -66,7 +66,7 @@
 }
 
 .books__navbar-menu {
-    margin-left: 1rem;
+    margin-left: 3rem;
 
     display: none;
     position: relative;
@@ -123,7 +123,7 @@
         padding: 2rem;
     }
 
-    .books__navbar-sign {
+    .books__navbar-sign.user{
         display: none;
     }
 

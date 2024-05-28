@@ -39,7 +39,7 @@ a {
 }
 
 .section__padding {
-  padding: 4rem 6rem;
+  padding: 0 6rem;
 }
 
 .section__margin {
@@ -73,6 +73,11 @@ a {
   }
 }
 
+@media screen and (max-width: 1190px) {
+  .section__padding {
+    padding: 4rem;
+  }
+}
 @media screen and (max-width: 700px) {
   .section__padding {
     padding: 4rem;

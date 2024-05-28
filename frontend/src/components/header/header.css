@@ -1,11 +1,10 @@
 .books__header {
     display: flex;
     flex-direction: row;
+    margin-top: -5rem;
+   
 }
 
-.books__header{
-    margin-top: -3rem;
-}
 .books__header-content {
     flex: 1;
     display: flex;
@@ -14,6 +13,7 @@
     flex-direction: column;
 
     margin-right: 5rem;
+ 
 }
 
 .books__header-content h1 {
@@ -22,6 +22,7 @@
     font-size: 62px;
     line-height: 75px;
     letter-spacing: -0.02em;
+   
 }
 
 .books__header-content p {
@@ -31,52 +32,7 @@
     line-height: 28px;
     color: var(--color-text);
 
-    margin-top: 2rem;
-}
-
-.books__header-content__input {
-    width: 100%;
-    margin: 2rem 0 1rem;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.books__header-content__input input {
-    flex: 2;
-    width: 100%;
-    min-height: 50px;
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    background: var(--color-footer);
-    border: 2px solid var(--color-footer);
-    padding: 0 1rem;
-    outline: none;
-    color: #fff;
-
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.books__header-content__input button {
-    flex: 0.6;
-    width: 100%;
-    min-height: 50px;
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    background: #FF4820;
-    border: 2px solid #FF4820;
-    padding: 0 1rem;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    margin-top: 3rem;
 }
 
 
@@ -89,12 +45,18 @@
 
 .books__header-image img {
     width: 90%;
-    height: 70%;
+    height: 50%;
     border: 5px solid transparent;
     border-image: linear-gradient(to right, transparent, blue) ;
     box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.5);
 }
 
+@media screen and (max-width: 1190px) {
+    .books__header-image img {
+        width: 90%;
+        height: 90%;
+    }
+}
 
 @media screen and (max-width: 1050px) {
     .books__header {
@@ -129,11 +91,6 @@
         margin: 0;
     }
 
-    .books__header-content__input input,
-    .books__header-content__input button {
-        font-size: 16px;
-        line-height: 24px;
-    }
     .books__header-image img {
         width: 90%;
         height: 25rem;
@@ -151,9 +108,4 @@
         line-height: 24px;
     }
 
-    .books__header-content__input input,
-    .books__header-content__input button {
-        font-size: 12px;
-        line-height: 16px;
-    }
 }

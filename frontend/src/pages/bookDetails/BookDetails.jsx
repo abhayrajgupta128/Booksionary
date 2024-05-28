@@ -13,7 +13,7 @@ const BookDetails = () => {
     if (!id) {
       return;
     }
-    axios.get(`/books/${id}`).then((response) => {
+    axios.get(`/book/books/${id}`).then((response) => {
       SetBook(response.data);
     });
   }, [id]);
@@ -22,7 +22,7 @@ const BookDetails = () => {
 
   async function handleDeleteBook(ev){
     ev.preventDefault();
-    await axios.delete(`/books/${id}`);
+    await axios.delete(`/book/books/${id}`);
     alert('Book is deleted');
     setRedirect(true);
   }

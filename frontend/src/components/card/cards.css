@@ -1,6 +1,9 @@
 .books-container_card{
-    width: 20rem;
-    color:white;
+    width: 100%;
+    max-width: 22rem; 
+    color: white;
+    margin: auto; 
+    box-sizing: border-box; 
 }
 
 .books-container_card-image{
@@ -9,7 +12,7 @@
 }
 .books-container_card-image img{
     width: 100%;
-    height: 30rem;
+    height: 25rem;
 }
 
 .books-container_card-content{
@@ -20,8 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem 1.5rem;
-    /* height: 100%; */
-    height: 20rem;
+    height: 15rem;
 }
 
 .books-container_card-title{
@@ -29,7 +31,7 @@
     font-size: 25.11px;
     font-weight: 800;
     line-height: 30.30px;
-    
+    height:5rem;
     color: #fff;
     cursor: pointer;
     /* margin-bottom: 1rem; */
@@ -40,7 +42,7 @@
     line-height: 25px;
     margin-top: 1rem;
     color: #fff;
-    height: 5rem;
+    height: 6rem;
     overflow: hidden;
     
 }
@@ -56,7 +58,7 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    /* margin-top: 4rem; */
+    margin-top: 1rem;
 }
 
 

@@ -17,7 +17,7 @@ const NewBook = () => {
     if(!id){
       return;
     }
-    axios.get(`/books/${id}`).then(response => {
+    axios.get(`/book/books/${id}`).then(response => {
       const {data} = response;
       setTitle(data.title);
       SetAuthor(data.author);
@@ -38,11 +38,11 @@ const NewBook = () => {
     };
     if(id){
       // update
-      await axios.put("/book", {id, ...booksInfo}); 
+      await axios.put("/book/book", {id, ...booksInfo}); 
       setRedirect(true);
     }else{
       // add a new book
-      await axios.post("/book", booksInfo); 
+      await axios.post("/book/book", booksInfo); 
       setRedirect(true);
     }
   }
