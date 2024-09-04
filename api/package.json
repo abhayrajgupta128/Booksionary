@@ -14,6 +14,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.564.0",
     "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
     "cjs": "^0.0.11",
     "cloudinary": "^1.21.0",
     "cookie-parser": "^1.4.6",
