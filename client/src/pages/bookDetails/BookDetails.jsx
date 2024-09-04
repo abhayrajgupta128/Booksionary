@@ -3,6 +3,7 @@ import { Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./bookDetails.css";
 import { Link } from "react-router-dom";
+import Image from "../../components/image/Image";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -38,11 +39,7 @@ const BookDetails = () => {
         <div className="mt-5 flex justify-center lg:justify-start">
           {book.photos?.[0] && (
             <div>
-              <img
-                className="rounded-3xl"
-                src={"http://localhost:8080/uploads/" + book.photos[0]}
-                alt=""
-              />
+              <Image className="rounded-3xl" src={book.photos[0]} alt="image" />
             </div>
           )}
         </div>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Image from "../image/Image";
 
 const PhotosUploader = ({ addedPhotos, onChange }) => {
 
@@ -84,11 +85,12 @@ const PhotosUploader = ({ addedPhotos, onChange }) => {
         {addedPhotos.length > 0 &&
             addedPhotos.map((link) => (
                 <div className="h-32 flex" key={link}>
-                <img
+                {/* <img
                     className="rounded-2xl w-full object-cover"
                     src={link}
                     alt="image"
-                />
+                /> */}
+                <Image src={link} alt="image" />
                 </div>
             ))}
 
