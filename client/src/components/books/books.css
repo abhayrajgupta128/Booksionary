@@ -1,0 +1,105 @@
+.books__card {
+  display: flex;
+  flex-direction: column;
+  margin-top: -6rem;
+}
+
+.books__card-heading {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.books__header-content__input {
+  width: 35%;
+  margin: 2rem 0rem;
+  display: flex;
+
+  flex-direction: row;
+  /* justify-content: flex-start; */
+  align-items:flex-end;
+}
+
+.books__header-content__input input {
+  flex: 2;
+  width: auto;
+  min-height: 50px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  background: var(--color-footer);
+  border: 2px solid var(--color-footer);
+  padding: 0 1rem;
+  outline: none;
+  color: #fff;
+
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.books__header-content__input button {
+  flex: 0.3;
+  width: auto;
+  min-height: 50px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  background: #ff4820;
+  border: 2px solid #ff4820;
+  padding: 0 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.books__card-heading h1 {
+  font-size: 62px;
+  line-height: 75px;
+  font-family: var(--font-family);
+  font-weight: 800;
+}
+
+.books__card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.books__card-button button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #ff4820;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 650px) {
+  .books__header-content__input input,
+  .books__header-content__input button {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .books__header-content__input input,
+  .books__header-content__input button {
+    font-size: 16px;
+    line-height: 12px;
+  }
+}
