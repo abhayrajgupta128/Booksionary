@@ -25,7 +25,7 @@ const Navbar = () => {
           <p>
             <a href="#books">Books</a>
           </p>
-          <Link to={"/api/new"}>
+          <Link to={"/api/books"}>
             <div className="books__navbar-add">
               <p>Add new book</p>
             </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
               <p>
                 <Link to={"/"}>Books</Link>
               </p>
-              <Link to={"/api/new"}>
+              <Link to={"/api/books"}>
                 <div className="books__navbar-add">
                   <p>Add new book</p>
                 </div>

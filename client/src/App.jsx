@@ -21,9 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<IndexPage />} />
-          <Route path="/api/book/:id" element={<BookDetails />} />
-          <Route path="/api/new" element={<NewBook />} />
-          <Route path="/api/new/:id" element={<NewBook />} />
+          <Route path="/api/books/:id" element={<BookDetails />} />
+          <Route path="/api/books" element={<NewBook />} />
+          <Route path="/api/books/:id" element={<NewBook />} />
           <Route path="/api/register" element={<ResgisterPage />} />
           <Route path="/api/login" element={<LoginPage />} />
           <Route path="/api/logout" element={<LogoutPage />} />
