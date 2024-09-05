@@ -20,10 +20,10 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<IndexPage />} />
-          <Route path="/books/:id" element={<BookDetails />} />
-          <Route path="/books" element={<NewBook />} />
-          <Route path="/books/:id" element={<NewBook />} />
+        <Route index element={<IndexPage />} />
+          <Route path="/book/:id" element={<BookDetails />} />
+          <Route path="/new" element={<NewBook />} />
+          <Route path="/new/:id" element={<NewBook />} />
           <Route path="/register" element={<ResgisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<LogoutPage />} />
