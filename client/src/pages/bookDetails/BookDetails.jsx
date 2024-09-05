@@ -57,7 +57,7 @@ const BookDetails = () => {
             <p className="mt-1">{book.description}</p>
           </div>
           <div className="books__navbar-sign mt-14 flex justify-between">
-            <Link to={`/new/${id}`}>
+            <Link to={`/api/new/${id}`}>
               <button>Edit</button>
             </Link>
             <button onClick={handleDeleteBook}>Delete</button>

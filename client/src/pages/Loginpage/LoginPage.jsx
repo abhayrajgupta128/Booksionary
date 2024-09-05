@@ -45,7 +45,7 @@ const LoginPage = () => {
           </div>
         <div className="text-center py-2 text-gray-500">
           Dont't have an account yet?
-          <Link className="underline text-white" to={"/register"}>
+          <Link className="underline text-white" to={"/api/register"}>
             Register now
           </Link>
         </div>

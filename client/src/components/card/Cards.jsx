@@ -6,7 +6,7 @@ import Image from "../image/Image";
 
 const Cards = ({ book }) => {
   return (
-    <Link to={"/book/" + book._id}>
+    <Link to={"/api/book/" + book._id}>
       <div className="books-container_card">
         <div className="books-container_card-image">
           <Image src={book.photos?.[0]} alt="image" />

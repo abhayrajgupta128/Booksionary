@@ -25,7 +25,7 @@ const Navbar = () => {
           <p>
             <a href="#books">Books</a>
           </p>
-          <Link to={"/new"}>
+          <Link to={"/api/new"}>
             <div className="books__navbar-add">
               <p>Add new book</p>
             </div>
@@ -35,7 +35,7 @@ const Navbar = () => {
 
       {!!user ? (
         <Link
-          to={"/logout"}
+          to={"/api/logout"}
           className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 ml-4 -mr-10 z-10"
         >
           <div className="bg-gray-500 text-white rounded-full border border-gray-500 overflow-hidden">
@@ -56,10 +56,10 @@ const Navbar = () => {
         </Link>
       ) : (
         <div className="books__navbar-sign user z-10">
-          <Link to={"/login"}>
+          <Link to={"/api/login"}>
             <p>Sign in</p>
           </Link>
-          <Link to={"/register"}>
+          <Link to={"/api/register"}>
             <button type="button">Sign up</button>
           </Link>
         </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
               <p>
                 <Link to={"/"}>Books</Link>
               </p>
-              <Link to={"/new"}>
+              <Link to={"/api/new"}>
                 <div className="books__navbar-add">
                   <p>Add new book</p>
                 </div>
@@ -98,10 +98,10 @@ const Navbar = () => {
               ""
             ) : (
               <div className="books__navbar-menu_container-links-sign">
-                <Link to={"/login"}>
+                <Link to={"/api/login"}>
                   <p>Sign in</p>
                 </Link>
-                <Link to={"/register"}>
+                <Link to={"/api/register"}>
                   <button type="button">Sign up</button>
                 </Link>
               </div>

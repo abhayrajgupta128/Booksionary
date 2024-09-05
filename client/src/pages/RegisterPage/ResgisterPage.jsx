@@ -57,7 +57,7 @@ const ResgisterPage = () => {
 
           <div className="text-center py-2 text-gray-500">
             Already a member? 
-            <Link className="underline text-white" to={"/login"}>
+            <Link className="underline text-white" to={"/api/login"}>
               Login
             </Link>
           </div>
