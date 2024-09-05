@@ -6,7 +6,6 @@ import Image from "../image/Image";
 const PhotosUploader = ({ addedPhotos, onChange }) => {
 
   const [photoLink, setPhotoLink] = useState("");
-  // const [loading, setLoading] = useState(false);
 
   async function addPhotoByLink(ev) {
     ev.preventDefault();
@@ -85,11 +84,6 @@ const PhotosUploader = ({ addedPhotos, onChange }) => {
         {addedPhotos.length > 0 &&
             addedPhotos.map((link) => (
                 <div className="h-32 flex" key={link}>
-                {/* <img
-                    className="rounded-2xl w-full object-cover"
-                    src={link}
-                    alt="image"
-                /> */}
                 <Image src={link} alt="image" />
                 </div>
             ))}
