@@ -21,14 +21,14 @@ const BookDetails = () => {
 
   if (!book) return "";
 
-  async function handleDeleteBook(ev){
+  async function handleDeleteBook(ev) {
     ev.preventDefault();
     await axios.delete(`/books/${id}`);
-    alert('Book is deleted');
+    alert("Book is deleted");
     setRedirect(true);
   }
-  if(redirect){
-    return <Navigate to={'/'} />
+  if (redirect) {
+    return <Navigate to={"/"} />;
   }
 
   return (
@@ -39,10 +39,17 @@ const BookDetails = () => {
         <div className="mt-5 flex justify-center lg:justify-start">
           {book.photos?.[0] && (
             <div>
-              <Image className="rounded-3xl" src={book.photos[0]} alt="image" />
+              <Image
+                className="rounded-3xl object-cover" 
+                src={book.photos[0]}
+                alt="image"
+                width={300} 
+                height={400} 
+              />
             </div>
           )}
         </div>
+
         <div className="my-14">
           <div className="mt-6">
             <h2 className="font-semibold text-3xl">Author</h2>
