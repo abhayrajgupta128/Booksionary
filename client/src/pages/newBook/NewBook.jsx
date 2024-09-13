@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./newbook.css";
 import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
 import { PhotosUploader } from "../../components";
 
 const NewBook = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [author, SetAuthor] = useState("");
   const [genre, SetGenre] = useState("");
@@ -13,19 +13,19 @@ const NewBook = () => {
   const [description, setDescription] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  useEffect(() =>{
-    if(!id){
+  useEffect(() => {
+    if (!id) {
       return;
     }
-    axios.get(`/books/${id}`).then(response => {
-      const {data} = response;
+    axios.get(`/books/${id}`).then((response) => {
+      const { data } = response;
       setTitle(data.title);
       SetAuthor(data.author);
       SetGenre(data.genre);
       setAddedPhotos(data.photos);
       setDescription(data.description);
-    })
-  },[id]);
+    });
+  }, [id]);
 
   async function addNewBook(ev) {
     ev.preventDefault();
@@ -36,19 +36,19 @@ const NewBook = () => {
       addedPhotos,
       description,
     };
-    if(id){
+    if (id) {
       // update
-      await axios.put("/book", {id, ...booksInfo}); 
+      await axios.put("/book", { id, ...booksInfo });
       setRedirect(true);
-    }else{
+    } else {
       // add a new book
-      await axios.post("/book", booksInfo); 
+      await axios.post("/book", booksInfo);
       setRedirect(true);
     }
   }
 
-  if(redirect && id){
-    return <Navigate to={`/book/${id}`} />
+  if (redirect && id) {
+    return <Navigate to={`/book/${id}`} />;
   }
   if (redirect) {
     return <Navigate to={"/"} />;

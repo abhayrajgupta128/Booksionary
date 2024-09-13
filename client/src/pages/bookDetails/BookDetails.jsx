@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./bookDetails.css";
 import { Link } from "react-router-dom";
 import Image from "../../components/image/Image";
+import toast from "react-hot-toast";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ const BookDetails = () => {
   async function handleDeleteBook(ev) {
     ev.preventDefault();
     await axios.delete(`/books/${id}`);
-    alert("Book is deleted");
+    toast.success("Book deleted successfully");
     setRedirect(true);
   }
   if (redirect) {
@@ -40,11 +41,11 @@ const BookDetails = () => {
           {book.photos?.[0] && (
             <div>
               <Image
-                className="rounded-3xl object-cover" 
+                className="rounded-3xl object-cover"
                 src={book.photos[0]}
                 alt="image"
-                width={300} 
-                height={400} 
+                width={300}
+                height={400}
               />
             </div>
           )}

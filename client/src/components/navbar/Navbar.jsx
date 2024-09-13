@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./navbar.css";
 import { images } from "../../constants";
@@ -33,7 +33,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {!!user ? (
+      {user ? (
         <Link
           to={"/logout"}
           className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 ml-4 -mr-10 z-10"
@@ -94,7 +94,7 @@ const Navbar = () => {
                 </div>
               </Link>
             </div>
-            {!!user ? (
+            {user ? (
               ""
             ) : (
               <div className="books__navbar-menu_container-links-sign">

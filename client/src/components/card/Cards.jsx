@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import "./cards.css";
 import { Link } from "react-router-dom";
@@ -20,6 +20,10 @@ const Cards = ({ book }) => {
       </div>
     </Link>
   );
+};
+
+Cards.propTypes = {
+  book: PropTypes.object.isRequired,
 };
 
 export default Cards;
